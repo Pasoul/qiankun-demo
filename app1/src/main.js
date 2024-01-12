@@ -10,6 +10,8 @@ Vue.config.productionTip = false
 
 let instance = null;
 
+
+
 export async function bootstrap() {
   console.log('vue app bootstraped');
 }
@@ -26,4 +28,8 @@ export async function mount(props) {
 export async function unmount() {
   instance.$destroy();
   instance = null;
+}
+
+if (!window.__POWERED_BY_QIANKUN__) {
+  mount()
 }
